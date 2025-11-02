@@ -9,12 +9,19 @@ import { RouterModule } from '@angular/router';
   styleUrl: './login.css',
 })
 export class Login {
-  constructor(private renderer: Renderer2) {
-    this.renderer.addClass(document.body, 'login-page');
+  ngOnInit() {
+    const registerButton: HTMLElement | null = document.getElementById('register');
+    const loginButton: HTMLElement | null = document.getElementById('login');
+    const container: HTMLElement | null = document.getElementById('container');
 
-    this.renderer.removeClass(document.body, 'sidebar-mini');
-    this.renderer.removeClass(document.body, 'layout-fixed');
+    if (registerButton && loginButton && container) {
+      registerButton.addEventListener('click', () => {
+        container.classList.add('right-panel-active');
+      });
 
-    this.renderer.setAttribute(document.body, 'style', 'min-height: 464px;');
+      loginButton.addEventListener('click', () => {
+        container.classList.remove('right-panel-active');
+      });
+    }
   }
 }

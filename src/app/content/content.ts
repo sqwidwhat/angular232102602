@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-content',
-  imports: [],
+  standalone: true,
+  imports: [RouterModule],
   templateUrl: './content.html',
-  styleUrl: './content.css'
+  styleUrl: './content.css',
 })
-export class Content {
-
-}
+export class Content {}

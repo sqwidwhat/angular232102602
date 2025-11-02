@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { AppRoutes } from '../app.routes';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [AppRoutes],
+  imports: [RouterModule],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
 })

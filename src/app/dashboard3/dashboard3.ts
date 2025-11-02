@@ -1,17 +1,18 @@
-import { Component, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, Renderer2 } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { Header } from '../header/header';
 import { Sidebar } from '../sidebar/sidebar';
 import { Footer } from '../footer/footer';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-dashboard',
-  imports: [RouterModule, Header, Sidebar, Footer],
-  templateUrl: './dashboard.html',
-  styleUrl: './dashboard.css',
+  selector: 'app-dashboard3',
+  standalone: true,
+  imports: [Header, Sidebar, Footer, RouterModule],
+  templateUrl: './dashboard3.html',
+  styleUrl: './dashboard3.css',
 })
-export class Dashboard {
+export class Dashboard3 implements AfterViewInit {
   constructor(private httpClient: HttpClient, private renderer: Renderer2) {}
 
   ngAfterViewInit(): void {

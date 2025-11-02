@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { Header } from '../header/header';
-import { Content } from '../content/content';
-import { Sidebar } from '../sidebar/sidebar';
-import { Footer } from '../footer/footer';
 import { RouterModule } from '@angular/router';
+import { Header } from '../header/header';
+import { Sidebar } from '../sidebar/sidebar';
+import { Content } from '../content/content';
+import { Footer } from '../footer/footer';
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [Content, Sidebar, Header, Footer, RouterModule],
+  imports: [RouterModule, Header, Sidebar, Content, Footer],
   templateUrl: './admin.html',
   styleUrl: './admin.css',
 })
