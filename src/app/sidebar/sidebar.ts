@@ -8,5 +8,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './sidebar.css',
 })
 export class Sidebar {
-  @Input() modulName: string = '';
+  @Input() moduleName: string = '';
 }

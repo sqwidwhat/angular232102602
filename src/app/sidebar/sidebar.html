@@ -48,10 +48,23 @@
         role="menu"
         data-accordion="false"
       >
-        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-        <li class="nav-item menu-open">
-          <a href="#" class="nav-link">
+        <li
+          class="nav-item has-treeview menu-open {{
+            (moduleName == 'dashboard' ||
+              moduleName == 'dashboard2' ||
+              moduleName == 'dashboard3') &&
+              'menu-open'
+          }}"
+        >
+          <a
+            href="#"
+            class="nav-link {{
+              (moduleName == 'dashboard' ||
+                moduleName == 'dashboard2' ||
+                moduleName == 'dashboard3') &&
+                'active'
+            }}"
+          >
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
@@ -63,7 +76,7 @@
               <a
                 [routerLink]="['/dashboard']"
                 routerLinkActive="routerLinkActive"
-                class="nav-link {{ modulName == 'dashboard' ? 'active' : '' }}"
+                class="nav-link {{ moduleName == 'dashboard' ? 'active' : '' }}"
               >
                 <i class="far fa-circle nav-icon"></i>
                 <p>Dashboard v1</p>
@@ -73,7 +86,7 @@
               <a
                 [routerLink]="['/dashboard2']"
                 routerLinkActive="routerLinkActive"
-                class="nav-link {{ modulName == 'dashboard2' ? 'active' : '' }}"
+                class="nav-link {{ moduleName == 'dashboard2' ? 'active' : '' }}"
               >
                 <i class="far fa-circle nav-icon"></i>
                 <p>Dashboard v2</p>
@@ -83,7 +96,7 @@
               <a
                 [routerLink]="['/dashboard3']"
                 routerLinkActive="routerLinkActive"
-                class="nav-link {{ modulName == 'dashboard3' ? 'active' : '' }}"
+                class="nav-link {{ moduleName == 'dashboard3' ? 'active' : '' }}"
               >
                 <i class="far fa-circle nav-icon"></i>
                 <p>Dashboard v3</p>
@@ -92,12 +105,13 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a href="pages/widgets.html" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
-            <p>
-              Widgets
-              <span class="right badge badge-danger">New</span>
-            </p>
+          <a
+            [routerLink]="['/mahasiswa']"
+            routerLinkActive="active"
+            class="nav-link {{ moduleName == 'mahasiswa' ? 'active' : '' }}"
+          >
+            <i class="nav-icon fas fa-graduation-cap"></i>
+            <p>Mahasiswa</p>
           </a>
         </li>
         <li class="nav-item">

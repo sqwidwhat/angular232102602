@@ -16,3 +16,9 @@ export const routes: Routes = [
   { path: 'dashboard3', component: Dashboard3 },
   { path: 'mahasiswa', component: Mahasiswa },
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
