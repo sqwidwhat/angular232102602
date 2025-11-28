@@ -83,5 +83,17 @@
     <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
     <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script>
+      // kita panggil element body dan toggle
+      const body = document.querySelector('body');
+      const toggle = document.getElementById('toggle');
+
+      // ketika toggle kita klik maka dia akan menambahkan class yang bernama active
+      // yang mana active itu akan kita gunakan di dalam css
+      toggle.onclick = function () {
+        toggle.classList.toggle('active');
+        body.classList.toggle('active');
+      };
+    </script>
   </body>
 </html>
