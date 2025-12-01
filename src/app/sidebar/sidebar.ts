@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { RouterModule, Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,6 +8,13 @@ import { RouterModule } from '@angular/router';
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
 })
-export class Sidebar {
+export class Sidebar implements OnInit {
   @Input() moduleName: string = '';
+  username: string = '';
+
+  constructor(private cookieService: CookieService, private router: Router) {}
+
+  ngOnInit(): void {
+    this.username = this.cookieService.get('userId'); // Perbaiki typo 'userid' menjadi 'userId'
+  }
 }
